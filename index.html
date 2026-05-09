@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muzammil Portfolio</title>
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+
         *{
             margin:0;
             padding:0;
@@ -18,116 +19,216 @@
         }
 
         body{
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #dfe9f3, #ffffff);
-            text-align:center;
-            padding:40px;
-        }
-
-        .box{
-            background:white;
-            padding:40px;
-            border-radius:20px;
-            width:80%;
-            max-width:900px;
-            margin:auto;
-            box-shadow:0 4px 15px rgba(0,0,0,0.2);
-            animation: fadeIn 1s ease;
-        }
-
-        img{
-            width:180px;
-            height:180px;
-            object-fit:cover;
-            border-radius:50%;
-            border:5px solid #0066cc;
-            margin-bottom:20px;
-        }
-
-        h1{
-            color:#0066cc;
-            margin-bottom:10px;
-        }
-
-        h3{
-            color:#555;
-            margin-bottom:20px;
-        }
-
-        p{
-            color:#444;
+            font-family:Arial, sans-serif;
+            background:#081229;
+            color:white;
             line-height:1.6;
         }
 
-        h2{
-            margin-top:30px;
-            margin-bottom:20px;
-            color:#222;
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
         }
 
-        .project{
-            background:#f9f9f9;
-            padding:20px;
-            margin:15px 0;
+        /* HERO SECTION */
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:60px;
+            flex-wrap:wrap;
+        }
+
+        .hero-text{
+            flex:1;
+        }
+
+        .hero-text h1{
+            font-size:72px;
+            margin-bottom:20px;
+            font-weight:bold;
+        }
+
+        .hero-text span{
+            color:#38bdf8;
+        }
+
+        .hero-text h3{
+            color:#94a3b8;
+            margin-bottom:25px;
+            font-size:32px;
+        }
+
+        .hero-text p{
+            max-width:600px;
+            color:#cbd5e1;
+            margin-bottom:35px;
+            font-size:22px;
+            line-height:1.8;
+        }
+
+        /* IMAGE */
+
+        .hero-img{
+            flex:1;
+            text-align:center;
+        }
+
+        .hero-img img{
+            width:320px;
+            height:320px;
+            object-fit:cover;
+            border-radius:50%;
+            border:5px solid #38bdf8;
+            box-shadow:0 0 30px rgba(56,189,248,0.8);
+        }
+
+        /* BUTTONS */
+
+        .btn{
+            display:inline-block;
+            padding:15px 28px;
+            margin:10px 15px 0 0;
+            background:#38bdf8;
+            color:#081229;
+            text-decoration:none;
             border-radius:12px;
+            font-weight:bold;
+            font-size:18px;
             transition:0.3s;
         }
 
-        .project:hover{
+        .btn:hover{
             transform:translateY(-5px);
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            background:white;
+            box-shadow:0 0 15px #38bdf8;
         }
+
+        /* SECTIONS */
+
+        section{
+            padding:80px 0;
+        }
+
+        h2{
+            font-size:42px;
+            margin-bottom:40px;
+            text-align:center;
+            color:#38bdf8;
+        }
+
+        /* PROJECTS */
+
+        .projects{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:#111c3a;
+            padding:30px;
+            border-radius:20px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 0 20px rgba(56,189,248,0.4);
+        }
+
+        .card i{
+            font-size:45px;
+            color:#38bdf8;
+            margin-bottom:20px;
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        .card p{
+            color:#cbd5e1;
+        }
+
+        /* SKILLS */
 
         .skills{
-            margin-top:15px;
-            font-weight:bold;
-            color:#333;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
         }
 
-        button{
-            background:#0066cc;
-            color:white;
-            border:none;
-            padding:12px 24px;
-            border-radius:8px;
-            cursor:pointer;
-            margin:10px;
-            font-size:16px;
+        .skill{
+            background:#111c3a;
+            padding:15px 28px;
+            border-radius:50px;
+            color:#38bdf8;
+            font-weight:bold;
+            font-size:18px;
             transition:0.3s;
         }
 
-        button:hover{
-            background:#004999;
-            transform:scale(1.05);
+        .skill:hover{
+            background:#38bdf8;
+            color:#081229;
+        }
+
+        /* CONTACT */
+
+        .contact{
+            text-align:center;
+        }
+
+        .contact p{
+            margin:18px 0;
+            color:#cbd5e1;
+            font-size:20px;
         }
 
         footer{
-            margin-top:30px;
-            color:#666;
+            text-align:center;
+            padding:30px;
+            color:#94a3b8;
+            font-size:18px;
         }
 
-        @keyframes fadeIn{
-            from{
-                opacity:0;
-                transform:translateY(20px);
-            }
-
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
+        /* MOBILE */
 
         @media(max-width:768px){
 
-            .box{
-                width:95%;
-                padding:20px;
+            .hero{
+                text-align:center;
+                justify-content:center;
+                padding-top:50px;
             }
 
-            img{
-                width:140px;
-                height:140px;
+            .hero-text h1{
+                font-size:48px;
+            }
+
+            .hero-text h3{
+                font-size:24px;
+            }
+
+            .hero-text p{
+                font-size:18px;
+            }
+
+            .hero-img img{
+                width:240px;
+                height:240px;
+            }
+
+            .btn{
+                display:block;
+                margin:15px auto;
+                width:220px;
             }
         }
 
@@ -136,97 +237,154 @@
 
 <body>
 
-    <div class="box">
+    <div class="container">
 
-        <!-- Profile Image -->
-        <img src="me.jpg.JPG" alt="Muzammil Photo">
+        <!-- HERO -->
 
-        <!-- Name -->
-        <h1>Muzammil Mehmood</h1>
+        <section class="hero">
 
-        <!-- Title -->
-        <h3>Biomedical Engineering Student</h3>
+            <div class="hero-text">
 
-        <!-- About -->
-        <p>
-            I am passionate about biomedical devices,
-            Arduino systems, healthcare innovation,
-            and engineering design using SolidWorks.
-        </p>
+                <h1>Hi, I'm <span>Muzammil</span></h1>
 
-        <!-- Projects -->
-        <h2>Projects</h2>
+                <h3>Biomedical Engineering Student</h3>
 
-        <div class="project">
-            <h3>Hand Support Device with Pressure Sensors</h3>
+                <p>
+                    Passionate about biomedical devices,
+                    Arduino systems, healthcare innovation,
+                    and engineering design using SolidWorks.
+                </p>
+
+                <!-- BUTTONS -->
+
+                <a href="https://www.linkedin.com/in/muzammil-mehmood-168392364/"
+                target="_blank" class="btn">
+
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+
+                </a>
+
+                <a href="mailto:muzmmilmahmood2@gmail.com"
+                class="btn">
+
+                    <i class="fa-solid fa-envelope"></i> Gmail
+
+                </a>
+
+                <a href="resume.dcox.docx" target="_blank" class="btn">
+    <i class="fa-solid fa-file"></i> Resume
+</a>
+</a>
+            </div>
+
+            <!-- IMAGE -->
+
+            <div class="hero-img">
+
+                <img src="me.jpg.JPG" alt="Muzammil Photo">
+
+            </div>
+
+        </section>
+
+        <!-- PROJECTS -->
+
+        <section>
+
+            <h2>Projects</h2>
+
+            <div class="projects">
+
+                <div class="card">
+
+                    <i class="fa-solid fa-hand"></i>
+
+                    <h3>Hand Support Device</h3>
+
+                    <p>
+                        Smart rehabilitation support system using
+                        pressure sensors for monitoring and assistance.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <h3>Arduino Detection System</h3>
+
+                    <p>
+                        Built an Arduino-based smart monitoring
+                        and automation system using sensors.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <h3>Wind Turbine Blade Design</h3>
+
+                    <p>
+                        Designed aerodynamic turbine blades using
+                        SolidWorks for improved efficiency.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SKILLS -->
+
+        <section>
+
+            <h2>Skills</h2>
+
+            <div class="skills">
+
+                <div class="skill">SolidWorks</div>
+                <div class="skill">Arduino</div>
+                <div class="skill">Sensors</div>
+                <div class="skill">Excel</div>
+                <div class="skill">Minitab</div>
+                
+                <div class="skill">Power Point</div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section class="contact">
+
+            <h2>Contact</h2>
+
             <p>
-                Developed a smart hand support system using
-                pressure sensors for rehabilitation assistance.
+                <i class="fa-solid fa-envelope"></i>
+                muzmmilmahmood2@gmail.com
             </p>
-        </div>
 
-        <div class="project">
-            <h3>Arduino Smart Detection System</h3>
             <p>
-                Built an Arduino-based detection and monitoring
-                system using sensors and automation.
+                <i class="fa-brands fa-linkedin"></i>
+                linkedin.com/in/muzammil-mehmood-168392364
             </p>
-        </div>
 
-        <div class="project">
-            <h3>Wind Turbine Blade Design</h3>
-            <p>
-                Designed and analyzed turbine blades using
-                SolidWorks for aerodynamic performance.
-            </p>
-        </div>
-
-        <!-- Skills -->
-        <h2>Skills</h2>
-
-        <p class="skills">
-            SolidWorks | Arduino | Sensors | Excel | Minitab
-        </p>
-
-        <!-- Buttons -->
-        <br>
-
-        <a href="mailto:yourgmail@gmail.com">
-            <button>
-                <i class="fa-solid fa-envelope"></i> Contact Me
-            </button>
-        </a>
-
-        <a href="https://www.linkedin.com/in/muzammil-mehmood-168392364/"
-            target="_blank">
-
-            <button>
-                <i class="fa-brands fa-linkedin"></i> LinkedIn
-            </button>
-        </a>
-
-        <a href="https://github.com/yourusername"
-            target="_blank">
-
-            <button>
-                <i class="fa-brands fa-github"></i> GitHub
-            </button>
-        </a>
-
-        <a href="resume.pdf" target="_blank">
-
-            <button>
-                <i class="fa-solid fa-file"></i> Resume
-            </button>
-        </a>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2025 Muzammil Mehmood | Biomedical Engineering Portfolio</p>
-        </footer>
+        </section>
 
     </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+        @ 2025 Muzammil Mehmood | Biomedical Engineering Portfolio
+    </footer>
 
 </body>
 
 </html>
+
