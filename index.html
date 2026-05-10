@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,19 +10,24 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
 
         *{
             margin:0;
             padding:0;
             box-sizing:border-box;
+            scroll-behavior:smooth;
         }
 
         body{
-            font-family:Arial, sans-serif;
-            background:#081229;
+            font-family:'Poppins',sans-serif;
+            background:#060d1f;
             color:white;
-            line-height:1.6;
+            line-height:1.7;
+            overflow-x:hidden;
         }
 
         .container{
@@ -31,10 +36,42 @@
             margin:auto;
         }
 
-        /* HERO SECTION */
+        /* NAVBAR */
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:30px 0;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:700;
+            color:#38bdf8;
+        }
+
+        nav ul{
+            display:flex;
+            gap:30px;
+            list-style:none;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            transition:0.3s;
+            font-size:17px;
+        }
+
+        nav a:hover{
+            color:#38bdf8;
+        }
+
+        /* HERO */
 
         .hero{
-            min-height:100vh;
+            min-height:90vh;
             display:flex;
             align-items:center;
             justify-content:space-between;
@@ -44,30 +81,31 @@
 
         .hero-text{
             flex:1;
+            animation:fadeIn 1s ease;
         }
 
         .hero-text h1{
-            font-size:72px;
-            margin-bottom:20px;
-            font-weight:bold;
+            font-size:78px;
+            margin-bottom:15px;
+            line-height:1.1;
         }
 
         .hero-text span{
             color:#38bdf8;
         }
 
-        .hero-text h3{
+        .typing{
+            font-size:32px;
             color:#94a3b8;
             margin-bottom:25px;
-            font-size:32px;
+            font-weight:400;
         }
 
         .hero-text p{
             max-width:600px;
             color:#cbd5e1;
             margin-bottom:35px;
-            font-size:22px;
-            line-height:1.8;
+            font-size:20px;
         }
 
         /* IMAGE */
@@ -75,15 +113,25 @@
         .hero-img{
             flex:1;
             text-align:center;
+            animation:fadeIn 1.2s ease;
         }
 
         .hero-img img{
-            width:320px;
-            height:320px;
+            width:350px;
+            height:350px;
             object-fit:cover;
             border-radius:50%;
             border:5px solid #38bdf8;
-            box-shadow:0 0 30px rgba(56,189,248,0.8);
+            box-shadow:
+            0 0 25px rgba(56,189,248,0.4),
+            0 0 60px rgba(56,189,248,0.15);
+
+            transition:0.4s;
+            animation:float 4s ease-in-out infinite;
+        }
+
+        .hero-img img:hover{
+            transform:scale(1.03);
         }
 
         /* BUTTONS */
@@ -96,26 +144,26 @@
             color:#081229;
             text-decoration:none;
             border-radius:12px;
-            font-weight:bold;
-            font-size:18px;
+            font-weight:600;
+            font-size:17px;
             transition:0.3s;
         }
 
         .btn:hover{
             transform:translateY(-5px);
             background:white;
-            box-shadow:0 0 15px #38bdf8;
+            box-shadow:0 0 20px rgba(56,189,248,0.6);
         }
 
         /* SECTIONS */
 
         section{
-            padding:80px 0;
+            padding:90px 0;
         }
 
         h2{
             font-size:42px;
-            margin-bottom:40px;
+            margin-bottom:50px;
             text-align:center;
             color:#38bdf8;
         }
@@ -125,19 +173,20 @@
         .projects{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:25px;
+            gap:28px;
         }
 
         .card{
-            background:#111c3a;
-            padding:30px;
-            border-radius:20px;
-            transition:0.3s;
+            background:#101a35;
+            padding:35px;
+            border-radius:22px;
+            transition:0.35s;
+            border:1px solid rgba(255,255,255,0.05);
         }
 
         .card:hover{
             transform:translateY(-8px);
-            box-shadow:0 0 20px rgba(56,189,248,0.4);
+            box-shadow:0 0 20px rgba(56,189,248,0.25);
         }
 
         .card i{
@@ -165,18 +214,18 @@
         }
 
         .skill{
-            background:#111c3a;
+            background:#101a35;
             padding:15px 28px;
             border-radius:50px;
             color:#38bdf8;
-            font-weight:bold;
-            font-size:18px;
+            font-weight:600;
             transition:0.3s;
         }
 
         .skill:hover{
             background:#38bdf8;
             color:#081229;
+            transform:scale(1.05);
         }
 
         /* CONTACT */
@@ -195,24 +244,64 @@
             text-align:center;
             padding:30px;
             color:#94a3b8;
-            font-size:18px;
+            border-top:1px solid rgba(255,255,255,0.05);
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes float{
+
+            0%{
+                transform:translateY(0px);
+            }
+
+            50%{
+                transform:translateY(-15px);
+            }
+
+            100%{
+                transform:translateY(0px);
+            }
+        }
+
+        @keyframes fadeIn{
+
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
         }
 
         /* MOBILE */
 
         @media(max-width:768px){
 
+            nav{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
             .hero{
                 text-align:center;
                 justify-content:center;
-                padding-top:50px;
+                padding-top:40px;
             }
 
             .hero-text h1{
-                font-size:48px;
+                font-size:52px;
             }
 
-            .hero-text h3{
+            .typing{
                 font-size:24px;
             }
 
@@ -221,14 +310,14 @@
             }
 
             .hero-img img{
-                width:240px;
-                height:240px;
+                width:250px;
+                height:250px;
             }
 
             .btn{
                 display:block;
-                margin:15px auto;
                 width:220px;
+                margin:15px auto;
             }
         }
 
@@ -239,20 +328,35 @@
 
     <div class="container">
 
+        <!-- NAVBAR -->
+
+        <nav>
+
+            <div class="logo">Muzammil.</div>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
         <!-- HERO -->
 
         <section class="hero">
 
             <div class="hero-text">
 
-                <h1>Hi, I'm <span>Muzammil</span></h1>
+                <h1>Hi, I'm <span>Muzammil Ch</span></h1>
 
-                <h3>Biomedical Engineering Student</h3>
+                <div class="typing" id="typing"></div>
 
                 <p>
                     Passionate about biomedical devices,
                     Arduino systems, healthcare innovation,
-                    and engineering design using SolidWorks.
+                    and engineering design using SolidWorks,Gait data anlysis by Excel  .
                 </p>
 
                 <!-- BUTTONS -->
@@ -271,10 +375,12 @@
 
                 </a>
 
-                <a href="resume.dcox.docx" target="_blank" class="btn">
-    <i class="fa-solid fa-file"></i> Resume
-</a>
-</a>
+                <a href="resume.pdf" target="_blank" class="btn">
+
+                    <i class="fa-solid fa-file"></i> Resume
+
+                </a>
+
             </div>
 
             <!-- IMAGE -->
@@ -289,7 +395,7 @@
 
         <!-- PROJECTS -->
 
-        <section>
+        <section id="projects">
 
             <h2>Projects</h2>
 
@@ -340,7 +446,7 @@
 
         <!-- SKILLS -->
 
-        <section>
+        <section id="skills">
 
             <h2>Skills</h2>
 
@@ -351,8 +457,7 @@
                 <div class="skill">Sensors</div>
                 <div class="skill">Excel</div>
                 <div class="skill">Minitab</div>
-                
-                <div class="skill">Power Point</div>
+                <div class="skill">PowerPoint</div>
 
             </div>
 
@@ -360,7 +465,7 @@
 
         <!-- CONTACT -->
 
-        <section class="contact">
+        <section class="contact" id="contact">
 
             <h2>Contact</h2>
 
@@ -381,10 +486,48 @@
     <!-- FOOTER -->
 
     <footer>
-        @ 2025 Muzammil Mehmood | Biomedical Engineering Portfolio
+        © 2025 Muzammil Mehmood | Biomedical Engineering Portfolio
     </footer>
+
+    <!-- TYPING EFFECT -->
+
+    <script>
+
+        const text = [
+            "Biomedical Engineering Student",
+            "Arduino Developer",
+            "SolidWorks Designer"
+        ];
+
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        (function type(){
+
+            if(count === text.length){
+                count = 0;
+            }
+
+            currentText = text[count];
+            letter = currentText.slice(0, ++index);
+
+            document.getElementById('typing').textContent = letter;
+
+            if(letter.length === currentText.length){
+
+                count++;
+                index = 0;
+
+            }
+
+            setTimeout(type, 120);
+
+        })();
+
+    </script>
 
 </body>
 
 </html>
-
